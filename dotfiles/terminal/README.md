@@ -5,7 +5,7 @@ Small reusable setup for Windows Terminal, PowerShell, Oh My Posh, and MesloLGS 
 ## Install
 
 ```powershell
-git clone <repo-url> dotfiles
+git clone https://github.com/an8kk/AnekTerminal.git dotfiles
 cd dotfiles/terminal
 powershell -ExecutionPolicy Bypass -File setup.ps1
 ```
