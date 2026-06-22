@@ -50,11 +50,13 @@ $profileSource = Join-Path $PSScriptRoot 'Microsoft.PowerShell_profile.ps1'
 
 Copy-Item -LiteralPath $themeSource -Destination (Join-Path $HOME 'minimal.omp.json') -Force
 
-$profileTargets = @($PROFILE)
-$pwshProfile = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'PowerShell\Microsoft.PowerShell_profile.ps1'
-if ($profileTargets -notcontains $pwshProfile) {
-    $profileTargets += $pwshProfile
-}
+$documents = [Environment]::GetFolderPath('MyDocuments')
+$profileTargets = @(
+    (Join-Path $documents 'PowerShell\profile.ps1'),
+    (Join-Path $documents 'PowerShell\Microsoft.PowerShell_profile.ps1'),
+    (Join-Path $documents 'WindowsPowerShell\profile.ps1'),
+    (Join-Path $documents 'WindowsPowerShell\Microsoft.PowerShell_profile.ps1')
+)
 
 foreach ($profilePath in $profileTargets) {
     $profileDir = Split-Path -Parent $profilePath
