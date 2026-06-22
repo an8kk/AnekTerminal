@@ -10,12 +10,10 @@
         {
           "type": "path",
           "style": "plain",
-          "template": "{{ .Path }}",
+          "template": "{{ replace \"/\" \"\\\\\" .Location }}",
           "foreground": "#7dcfff",
           "properties": {
-            "style": "full",
-            "home_icon": "C:\\Users\\Anek",
-            "folder_separator_icon": "\\"
+            "style": "full"
           }
         },
         {
