@@ -2,7 +2,21 @@
 
 Small reusable setup for Windows Terminal, PowerShell, Oh My Posh, and MesloLGS Nerd Font.
 
-Prompt layout: one-line full path, git branch, package version, Node.js version, prompt symbol, and a right-aligned PowerShell version.
+Prompt layout: status on the first line, input on the second line.
+
+```text
+ C:\path\to\repo  󰘬 branch 󰏗 package-version  node-version      pwsh 7.5.5
+❯ your command here
+```
+
+Legend:
+
+- ` C:\path\to\repo`: full current path.
+- `󰘬 branch`: current git branch; shown only inside git repos.
+- `󰏗 package-version`: npm/package version; shown when package metadata exists.
+- ` node-version`: active Node.js version; shown everywhere Node is available.
+- `pwsh 7.5.5`: PowerShell name and version, right-aligned.
+- `❯`: input prompt symbol on its own line.
 
 ## Install
 
