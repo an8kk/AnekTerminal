@@ -98,8 +98,8 @@ function Update-WindowsTerminalSettings {
     Set-ObjectProperty -Object $defaults -Name 'backgroundImageOpacity' -Value 0.22
     Set-ObjectProperty -Object $defaults -Name 'backgroundImageStretchMode' -Value 'uniformToFill'
     Set-ObjectProperty -Object $defaults -Name 'cursorShape' -Value 'bar'
-    Set-ObjectProperty -Object $defaults -Name 'opacity' -Value 94
-    Set-ObjectProperty -Object $defaults -Name 'useAcrylic' -Value $true
+    Set-ObjectProperty -Object $defaults -Name 'opacity' -Value 100
+    Set-ObjectProperty -Object $defaults -Name 'useAcrylic' -Value $false
 
     if (-not $defaults.font) {
         Set-ObjectProperty -Object $defaults -Name 'font' -Value ([pscustomobject]@{})
