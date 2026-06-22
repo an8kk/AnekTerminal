@@ -13,7 +13,8 @@
           "template": "{{ .Path }}",
           "foreground": "#7dcfff",
           "properties": {
-            "style": "folder"
+            "style": "folder",
+            "home_icon": "Anek"
           }
         },
         {
