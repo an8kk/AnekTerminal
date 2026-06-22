@@ -129,8 +129,8 @@ if ($LASTEXITCODE -ne 0) {
 
 $themeSource = Join-Path $PSScriptRoot 'minimal.omp.json'
 $profileSource = Join-Path $PSScriptRoot 'Microsoft.PowerShell_profile.ps1'
-$backgroundSource = Join-Path $PSScriptRoot 'terminalbg.png'
-$backgroundTarget = Join-Path $HOME 'terminalbg.png'
+$backgroundSource = Join-Path $PSScriptRoot 'terminalbg.jpg'
+$backgroundTarget = Join-Path $HOME 'terminalbg.jpg'
 
 Copy-Item -LiteralPath $themeSource -Destination (Join-Path $HOME 'minimal.omp.json') -Force
 Copy-Item -LiteralPath $backgroundSource -Destination $backgroundTarget -Force
