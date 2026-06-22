@@ -2,6 +2,8 @@
 
 Small reusable setup for Windows Terminal, PowerShell, Oh My Posh, and MesloLGS Nerd Font.
 
+Prompt layout: full path, git branch, package version, Node.js version, and a right-aligned PowerShell version.
+
 ## Install
 
 ```powershell
