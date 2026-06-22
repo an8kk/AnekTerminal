@@ -28,6 +28,28 @@ function Refresh-Path {
     $env:Path = "$machinePath;$userPath"
 }
 
+function Get-FileSha256Prefix {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Path
+    )
+
+    $sha = [System.Security.Cryptography.SHA256]::Create()
+    try {
+        $stream = [System.IO.File]::OpenRead((Resolve-Path -LiteralPath $Path))
+        try {
+            $hash = -join ($sha.ComputeHash($stream) | ForEach-Object { $_.ToString('x2') })
+            return $hash.Substring(0, 12)
+        }
+        finally {
+            $stream.Dispose()
+        }
+    }
+    finally {
+        $sha.Dispose()
+    }
+}
+
 function Set-ObjectProperty {
     param(
         [Parameter(Mandatory = $true)]
@@ -130,7 +152,8 @@ if ($LASTEXITCODE -ne 0) {
 $themeSource = Join-Path $PSScriptRoot 'minimal.omp.json'
 $profileSource = Join-Path $PSScriptRoot 'Microsoft.PowerShell_profile.ps1'
 $backgroundSource = Join-Path $PSScriptRoot 'terminalbg.jpg'
-$backgroundTarget = Join-Path $HOME 'terminalbg.jpg'
+$backgroundHash = Get-FileSha256Prefix -Path $backgroundSource
+$backgroundTarget = Join-Path $HOME "terminalbg-$backgroundHash.jpg"
 
 Copy-Item -LiteralPath $themeSource -Destination (Join-Path $HOME 'minimal.omp.json') -Force
 Copy-Item -LiteralPath $backgroundSource -Destination $backgroundTarget -Force
