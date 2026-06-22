@@ -10,48 +10,37 @@
         {
           "type": "path",
           "style": "plain",
-          "template": " {{ .Path }} ",
-          "foreground": "#9aa0a6",
+          "template": "{{ .Path }}",
+          "foreground": "#7dcfff",
           "properties": {
-            "style": "full",
-            "home_icon": "C:\\Users\\Anek",
-            "folder_separator_icon": "\\"
+            "style": "folder"
           }
         },
         {
           "type": "git",
           "style": "plain",
-          "template": " 󰘬 {{ .HEAD }}",
+          "template": " on  {{ .Ref }}",
           "foreground": "#bb9af7"
         },
         {
-          "type": "npm",
+          "type": "project",
           "style": "plain",
-          "template": " 󰏗 {{ .Full }}",
+          "template": "{{ if .Version }} is 󰏗 v{{ .Version }}{{ end }}",
           "foreground": "#e0af68"
         },
         {
-          "type": "node",
+          "type": "python",
           "style": "plain",
-          "template": "  {{ .Full }}",
-          "foreground": "#7dcfff",
+          "template": " via  v{{ .Full }}",
+          "foreground": "#9ece6a",
           "properties": {
             "display_mode": "always",
-            "home_enabled": true
+            "home_enabled": true,
+            "fetch_virtual_env": false,
+            "tooling": [
+              "uv"
+            ]
           }
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "overflow": "hide",
-      "segments": [
-        {
-          "type": "shell",
-          "style": "plain",
-          "template": "{{ .Name }} {{ .Version }}",
-          "foreground": "#bb9af7"
         }
       ]
     },
@@ -63,8 +52,8 @@
         {
           "type": "text",
           "style": "plain",
-          "template": "❯ ",
-          "foreground": "#9ece6a"
+          "template": "› ",
+          "foreground": "#e0af68"
         }
       ]
     }
