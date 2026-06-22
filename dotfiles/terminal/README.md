@@ -31,7 +31,7 @@ After setup, restart Windows Terminal. The script applies the profile, prompt th
 
 - Color scheme: Anek dark
 - Font: MesloLGS Nerd Font
-- Background image: `terminalbg.jpg`, copied locally as `terminalbg-<hash>.jpg`
+- Background image: `terminalbg.png`, copied locally as `terminalbg-<hash>.png`
 - Background image opacity: 22%
 - Acrylic: off
 - Terminal opacity: 100%
