@@ -25,11 +25,11 @@ cd dotfiles/terminal
 powershell -ExecutionPolicy Bypass -File setup.ps1
 ```
 
-After setup, restart Windows Terminal. The script applies the profile, theme, MesloLGS Nerd Font, acrylic, opacity, cursor shape, and background image.
+After setup, restart Windows Terminal. The script applies the profile, prompt theme, Anek color scheme, MesloLGS Nerd Font, acrylic, opacity, cursor shape, and background image.
 
 ## Windows Terminal appearance
 
-- Theme: dark
+- Color scheme: Anek dark
 - Font: MesloLGS Nerd Font
 - Background image: `terminalbg.png`
 - Background image opacity: 22%

@@ -64,7 +64,35 @@ function Update-WindowsTerminalSettings {
         Set-ObjectProperty -Object $settings.profiles -Name 'defaults' -Value ([pscustomobject]@{})
     }
 
+
+    $anekScheme = [pscustomobject]@{
+        background = '#0B0B0B'
+        black = '#1C1C1C'
+        blue = '#7AA2F7'
+        brightBlack = '#666666'
+        brightBlue = '#7AA2F7'
+        brightCyan = '#7DCFFF'
+        brightGreen = '#95D475'
+        brightPurple = '#BB9AF7'
+        brightRed = '#FF6B6B'
+        brightWhite = '#FFFFFF'
+        brightYellow = '#D7BA7D'
+        cursorColor = '#FFFFFF'
+        cyan = '#7DCFFF'
+        foreground = '#D0D0D0'
+        green = '#95D475'
+        name = 'Anek'
+        purple = '#BB9AF7'
+        red = '#FF6B6B'
+        selectionBackground = '#FFFFFF'
+        white = '#D0D0D0'
+        yellow = '#D7BA7D'
+    }
+    $otherSchemes = @($settings.schemes | Where-Object { $_.name -ne 'Anek' })
+    Set-ObjectProperty -Object $settings -Name 'schemes' -Value @($otherSchemes + $anekScheme)
+
     $defaults = $settings.profiles.defaults
+    Set-ObjectProperty -Object $defaults -Name 'colorScheme' -Value 'Anek'
     Set-ObjectProperty -Object $defaults -Name 'backgroundImage' -Value $BackgroundPath
     Set-ObjectProperty -Object $defaults -Name 'backgroundImageAlignment' -Value 'center'
     Set-ObjectProperty -Object $defaults -Name 'backgroundImageOpacity' -Value 0.22
