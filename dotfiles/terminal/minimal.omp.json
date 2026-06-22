@@ -10,7 +10,7 @@
         {
           "type": "path",
           "style": "plain",
-          "template": "󰉋 {{ .Path }}",
+          "template": " {{ .Path }}",
           "foreground": "#7a7a7a",
           "properties": {
             "style": "full",
@@ -41,7 +41,11 @@
           "type": "node",
           "style": "plain",
           "template": "via  {{ .Full }}",
-          "foreground": "#7dcfff"
+          "foreground": "#7dcfff",
+          "properties": {
+            "display_mode": "always",
+            "home_enabled": true
+          }
         }
       ]
     },
